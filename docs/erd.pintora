@@ -30,6 +30,7 @@ erDiagram
   }
   purchase {
     INT id PK
+    INT user_id FK
     INT menu_id FK
     INT amount
     TIMESTAMP created_at
