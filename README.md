@@ -1,5 +1,7 @@
 # FoodBear API
 
+## ERD
+![ERD](/docs/erd.png)
 
 ## Development
 1. Install all packages using npm/pnpm/yarn.

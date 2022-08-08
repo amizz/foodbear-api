@@ -1,0 +1,40 @@
+erDiagram
+  @param fontSize 14
+  @config({
+    "themeConfig": {
+      "theme": "larkLight"
+    },
+    "er": {}
+  })
+  user {
+    INT id PK
+    VARCHAR name
+    INT cash_balance
+    TIMESTAMP created_at
+    TIMESTAMP updated_at
+  }
+  restaurant {
+    INT id PK
+    VARCHAR name
+    INT cash_balance
+    TIMESTAMP created_at
+    TIMESTAMP updated_at
+  }
+  menu {
+    INT id PK
+    INT restaurant_id FK
+    VARCHAR dish_name
+    INT price
+    TIMESTAMP created_at
+    TIMESTAMP updated_at
+  }
+  purchase {
+    INT id PK
+    INT menu_id FK
+    INT amount
+    TIMESTAMP created_at
+    TIMESTAMP updated_at
+  }
+  restaurant ||--o{ menu : "fk"
+  user ||--o{ purchase : "fk"
+  menu ||--o{ purchase  : "fk"
