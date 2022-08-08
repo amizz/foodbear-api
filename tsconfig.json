@@ -1,0 +1,39 @@
+{
+	"compilerOptions": {
+        "baseUrl": ".",
+		"outDir": "dist",
+		"target": "ES2019",
+		"module": "CommonJS",
+		"moduleResolution": "Node",
+		"typeRoots": ["node_modules/@types/", "./src/interfaces/"],
+		"esModuleInterop": true,
+		"resolveJsonModule": true,
+		"importHelpers": false,
+		"downlevelIteration": true,
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true,
+		"allowSyntheticDefaultImports": true,
+		"forceConsistentCasingInFileNames": true,
+		"strict": true,
+		"removeComments": true,
+		"noImplicitAny": false,
+		"noImplicitReturns": false,
+		"paths": {
+			"#controllers/*": ["./src/controllers/*"],
+			"#database/*": ["./src/database/*"],
+			"#interfaces/*": ["./src/interfaces/*"],
+			"#lib/*": ["./src/lib/*"],
+			"#middlewares/*": ["./src/middlewares/*"],
+			"#routes/*": ["./src/routes/*"],
+			"#utils/*": ["./src/utils/*"]
+		}
+	},
+	"include": ["src/**/*.ts", "src/**/*.d.ts", "__tests__", "init.ts"],
+	"exclude": ["node_modules", "dist"],
+	"ts-node": {
+		"files": true,
+		"transpileOnly": true,
+		"compilerHost": true,
+		"ignore": ["node_modules", "dist"]
+	}
+}

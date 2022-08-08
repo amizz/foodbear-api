@@ -1,0 +1,169 @@
+version: '3.9'
+services:
+  ### ===================
+  ### DB SERVICE
+  ### ===================
+  db:
+    image: postgres:14.4-alpine
+    restart: "no"
+    healthcheck:
+      start_period: 60ms
+      retries: 3
+      timeout: 15s
+      interval: 30s
+      test: |
+        touch /tmp/healthcheck.txt &&
+        mkdir /tmp/healthcheck &&
+        mv /tmp/healthcheck.txt /tmp/healthcheck &&
+        cd /tmp/healthcheck &&
+        echo "hello my docker container is working fine" >> healthcheck.txt &&
+        cat healthcheck.txt &&
+        rm healthcheck.txt &&
+        cd .. &&
+        rmdir /tmp/healthcheck &&
+        clear
+    environment:
+      POSTGRES_DB: foodbear
+      POSTGRES_USER: foodbear
+      POSTGRES_PASSWORD: foodbear
+    ports:
+      - 5432:5432
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    networks:
+      - foodbear_network
+  ### ===================
+  ### DB TEST SERVICE
+  ### ===================
+  db-test:
+    image: postgres:14.2-alpine
+    restart: "no"
+    healthcheck:
+      start_period: 60ms
+      retries: 3
+      timeout: 15s
+      interval: 30s
+      test: |
+        touch /tmp/healthcheck.txt &&
+        mkdir /tmp/healthcheck &&
+        mv /tmp/healthcheck.txt /tmp/healthcheck &&
+        cd /tmp/healthcheck &&
+        echo "hello my docker container is working fine" >> healthcheck.txt &&
+        cat healthcheck.txt &&
+        rm healthcheck.txt &&
+        cd .. &&
+        rmdir /tmp/healthcheck &&
+        clear
+    environment:
+      POSTGRES_DB: foodbear
+      POSTGRES_USER: foodbear
+      POSTGRES_PASSWORD: foodbear
+    ports:
+      - 5433:5432
+    volumes:
+      - db-test-data:/var/lib/postgresql/data
+    networks:
+      - foodbear_network
+  ### ===================
+  ### REDIS SERVICE
+  ### ===================
+  redis:
+    image: redis:7.0.4-alpine
+    restart: "no"
+    healthcheck:
+      start_period: 60ms
+      retries: 3
+      timeout: 15s
+      interval: 30s
+      test: |
+        touch /tmp/healthcheck.txt &&
+        mkdir /tmp/healthcheck &&
+        mv /tmp/healthcheck.txt /tmp/healthcheck &&
+        cd /tmp/healthcheck &&
+        echo "hello my docker container is working fine" >> healthcheck.txt &&
+        cat healthcheck.txt &&
+        rm healthcheck.txt &&
+        cd .. &&
+        rmdir /tmp/healthcheck &&
+        clear
+    ports:
+      - 6379:6379
+    volumes:
+      - rd-data:/var/lib/redis/data
+    networks:
+      - foodbear_network
+  ### ====================
+  ### MEILISEARCH SERVICE
+  ### ====================
+  meilisearch:
+    image: getmeili/meilisearch:v0.28.1
+    restart: "no"
+    healthcheck:
+      start_period: 60ms
+      retries: 3
+      timeout: 15s
+      interval: 30s
+      test: |
+        touch /tmp/healthcheck.txt &&
+        mkdir /tmp/healthcheck &&
+        mv /tmp/healthcheck.txt /tmp/healthcheck &&
+        cd /tmp/healthcheck &&
+        echo "hello my docker container is working fine" >> healthcheck.txt &&
+        cat healthcheck.txt &&
+        rm healthcheck.txt &&
+        cd .. &&
+        rmdir /tmp/healthcheck &&
+        clear
+    environment:
+      - MEILI_MASTER_KEY=development
+    ports:
+      - 7700:7700
+    volumes:
+      - ms-data:/var/lib/meilisearch/data
+    networks:
+      - foodbear_network
+  #############################
+  # PGA SERVIVICES
+  #############################
+  pga:
+    image: dpage/pgadmin4:latest
+    restart: "no"
+    healthcheck:
+      start_period: 60ms
+      retries: 3
+      timeout: 15s
+      interval: 30s
+      test: |
+        touch /tmp/healthcheck.txt &&
+        mkdir /tmp/healthcheck &&
+        mv /tmp/healthcheck.txt /tmp/healthcheck &&
+        cd /tmp/healthcheck &&
+        echo "hello my docker container is working fine" >> healthcheck.txt &&
+        cat healthcheck.txt &&
+        rm healthcheck.txt &&
+        cd .. &&
+        rmdir /tmp/healthcheck &&
+        clear
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=pga@admin.com
+      - PGADMIN_DEFAULT_PASSWORD=pga
+    ports:
+      - 8000:80
+    depends_on:
+      - db
+      - db-test
+    networks:
+      - foodbear_network
+### ========================
+### VOLUMES PERSISTENT DATA
+### ========================
+volumes:
+  db-data:
+  db-test-data:
+  ms-data:
+  rd-data:
+### ===================================
+### NETWORKS GROUP FOR ONE SAME SERVICE
+### ===================================
+networks:
+  foodbear_network:

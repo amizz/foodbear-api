@@ -1,0 +1,59 @@
+{
+  "name": "foodbear-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "cross-env NODE_ENV=testing uvu -r tsconfig-paths/register -r ts-node/register __tests__ --glob=\"**/*.test.ts\"",
+    "test:__tests__": "sane \"npm test\" __tests__ -o --wait=3",
+    "test:src": "sane \"npm test\" src -o --wait=3",
+    "test:watch": "concurrently \"npm run test:__tests__\" \"npm run test:src\"",
+    "clean": "rimraf dist",
+    "compiler": "npm run clean && tsc --pretty && tsc-alias",
+    "build": "npm run clean && ncc build src/server.ts -o dist",
+    "dev": "ts-node -r tsconfig-paths/register ./src/server.ts",
+    "dev:watch": "nodemon --watch \"src/**\" --ext \"ts,json\" --exec \"npm run dev\"",
+    "prod": "node dist/server.js",
+    "deploy": "npm install && npm run build && serverless deploy",
+    "deploy:production": "npm install && npm run build && serverless deploy --stage production",
+    "deploy:staging": "npm install && npm run build && serverless deploy --stage staging",
+    "knex:migrate:make": "knex --knexfile src/database/knexfile.ts migrate:make",
+    "knex:migrate:latest": "knex --knexfile src/database/knexfile.ts migrate:latest",
+    "knex:migrate:rollback": "knex --knexfile src/database/knexfile.ts migrate:rollback",
+    "knex:seed:run": "cross-env KNEX=true NODE_OPTIONS=\"-r ts-node/register -r tsconfig-paths/register\" knex --knexfile src/database/knexfile.ts seed:run",
+    "knex:seed:run:other": "cross-env KNEX=true ts-node -r tsconfig-paths/register node_modules/knex/bin/cli.js --knexfile src/database/knexfile.ts seed:run",
+    "knex:seed:make": "cross-env KNEX=true knex --knexfile src/database/knexfile.ts seed:make"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "imports": {
+    "#main/*": "./dist/src/*",
+    "#controllers/*": "./dist/src/controllers/*",
+    "#database/*": "./dist/src/database/*",
+    "#interfaces/*": "./dist/src/interfaces/*",
+    "#lib/*": "./dist/src/lib/*",
+    "#middlewares/*": "./dist/src/middlewares/*",
+    "#routes/*": "./dist/src/routes/*",
+    "#utils/*": "./dist/src/utils/*"
+  },
+  "dependencies": {
+    "@fastify/cors": "^8.1.0",
+    "@fastify/formbody": "^7.0.1",
+    "dotenv": "^16.0.1",
+    "fastify": "^4.3.0",
+    "ioredis": "^5.2.2",
+    "joi": "^17.6.0",
+    "knex": "^2.2.0",
+    "meilisearch": "^0.27.0",
+    "pg": "^8.7.3"
+  },
+  "devDependencies": {
+    "@types/node": "^18.6.4",
+    "nodemon": "^2.0.19",
+    "nyc": "^15.1.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.7.4",
+    "uvu": "^0.5.6"
+  }
+}
