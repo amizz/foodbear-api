@@ -17,9 +17,9 @@
     "deploy": "npm install && npm run build && serverless deploy",
     "deploy:production": "npm install && npm run build && serverless deploy --stage production",
     "deploy:staging": "npm install && npm run build && serverless deploy --stage staging",
-    "knex:migrate:make": "knex --knexfile src/database/knexfile.ts migrate:make",
-    "knex:migrate:latest": "knex --knexfile src/database/knexfile.ts migrate:latest",
-    "knex:migrate:rollback": "knex --knexfile src/database/knexfile.ts migrate:rollback",
+    "knex:migrate:make": "cross-env KNEX=true knex --knexfile src/database/knexfile.ts migrate:make",
+    "knex:migrate:latest": "cross-env KNEX=true knex --knexfile src/database/knexfile.ts migrate:latest",
+    "knex:migrate:rollback": "cross-env KNEX=true knex --knexfile src/database/knexfile.ts migrate:rollback",
     "knex:seed:run": "cross-env KNEX=true NODE_OPTIONS=\"-r ts-node/register -r tsconfig-paths/register\" knex --knexfile src/database/knexfile.ts seed:run",
     "knex:seed:run:other": "cross-env KNEX=true ts-node -r tsconfig-paths/register node_modules/knex/bin/cli.js --knexfile src/database/knexfile.ts seed:run",
     "knex:seed:make": "cross-env KNEX=true knex --knexfile src/database/knexfile.ts seed:make"
@@ -42,6 +42,7 @@
     "@fastify/formbody": "^7.0.1",
     "dotenv": "^16.0.1",
     "fastify": "^4.3.0",
+    "fs-extra": "^10.1.0",
     "ioredis": "^5.2.2",
     "joi": "^17.6.0",
     "knex": "^2.2.0",
@@ -50,6 +51,7 @@
   },
   "devDependencies": {
     "@types/node": "^18.6.4",
+    "cross-env": "^7.0.3",
     "nodemon": "^2.0.19",
     "nyc": "^15.1.0",
     "ts-node": "^10.9.1",
