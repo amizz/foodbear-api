@@ -30,6 +30,7 @@ erDiagram
   }
   purchase {
     INT id PK
+    INT restaurant_id FK
     INT user_id FK
     INT menu_id FK
     INT amount
@@ -37,5 +38,6 @@ erDiagram
     TIMESTAMP updated_at
   }
   restaurant ||--o{ menu : "fk"
+  restaurant ||--o{ purchase : "fk"
   user ||--o{ purchase : "fk"
   menu ||--o{ purchase  : "fk"
