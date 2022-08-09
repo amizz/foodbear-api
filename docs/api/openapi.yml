@@ -1,0 +1,31 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: FoodBear API
+  description: FoodBear restaurant and user API
+paths:
+  /restaurants:
+    get:
+      description: Get all restaurants            
+      responses:
+        '200':
+          description: Successful response
+  /restaurants/top:
+    get:
+      description: Get top restaurants based on the number of dishes within price range           
+      responses:
+        '200':
+          description: Successful response
+  /restaurants/search:
+    get:
+      description: Search for restaurants or dishes by name, ranked by relevance to search term        
+      responses:
+        '200':
+          description: Successful response
+  /purchases:
+    post:
+      description: Get top restaurants based on the number of dishes within price range           
+      responses:
+        '200':
+          description: Successful response
+          
