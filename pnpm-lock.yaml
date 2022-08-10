@@ -5,6 +5,7 @@ specifiers:
   '@fastify/formbody': ^7.0.1
   '@types/node': ^18.6.4
   cross-env: ^7.0.3
+  date-fns: ^2.29.1
   dotenv: ^16.0.1
   fastify: ^4.3.0
   fs-extra: ^10.1.0
@@ -16,12 +17,14 @@ specifiers:
   nyc: ^15.1.0
   pg: ^8.7.3
   ts-node: ^10.9.1
+  tsconfig-paths: ^4.1.0
   typescript: ^4.7.4
   uvu: ^0.5.6
 
 dependencies:
   '@fastify/cors': 8.1.0
   '@fastify/formbody': 7.0.1
+  date-fns: 2.29.1
   dotenv: 16.0.1
   fastify: 4.3.0
   fs-extra: 10.1.0
@@ -37,6 +40,7 @@ devDependencies:
   nodemon: 2.0.19
   nyc: 15.1.0
   ts-node: 10.9.1_hn66opzbaneygq52jmwjxha6su
+  tsconfig-paths: 4.1.0
   typescript: 4.7.4
   uvu: 0.5.6
 
@@ -686,6 +690,11 @@ packages:
       which: 2.0.2
     dev: true
 
+  /date-fns/2.29.1:
+    resolution: {integrity: sha512-dlLD5rKaKxpFdnjrs+5azHDFOPEu4ANy/LTh04A1DTzMM7qoajmKCBc8pkKRFT41CNzw+4gQh79X5C+Jq27HAw==}
+    engines: {node: '>=0.11'}
+    dev: false
+
   /debug/3.2.7_supports-color@5.5.0:
     resolution: {integrity: sha512-CFjzYYAi4ThfiQvizrFQevTTXHtnCqWfe7x1AhgEscTz6ZbLbfoLRLPugTQyBth6f8ZERVUSyWHFD/7Wu4t1XQ==}
     peerDependencies:
@@ -1318,6 +1327,10 @@ packages:
       brace-expansion: 1.1.11
     dev: true
 
+  /minimist/1.2.6:
+    resolution: {integrity: sha512-Jsjnk4bw3YJqYzbdyBiNsPWHPfO++UGG749Cxs6peCu5Xg4nrena6OVxOYxrQTqww0Jmwt+Ref8rggumkTLz9Q==}
+    dev: true
+
   /mnemonist/0.39.2:
     resolution: {integrity: sha512-n3ZCEosuMH03DVivZ9N0fcXPWiZrBLEdfSlEJ+S/mJxmk3zuo1ur0dj9URDczFyP1VS3wfiyKzqLLDXoPJ6rPA==}
     dependencies:
@@ -1873,6 +1886,11 @@ packages:
       ansi-regex: 5.0.1
     dev: true
 
+  /strip-bom/3.0.0:
+    resolution: {integrity: sha512-vavAMRXOgBVNF6nyEEmL3DBK19iRpDcoIwW+swQ+CbGiu7lju6t+JklA1MHweoWtadgt4ISVUsXLyDq34ddcwA==}
+    engines: {node: '>=4'}
+    dev: true
+
   /strip-bom/4.0.0:
     resolution: {integrity: sha512-3xurFv5tEgii33Zi8Jtp55wEIILR9eh34FAW00PZf+JnSsTmV/ioewSgQl97JHvgjoRGwPShsWm+IdrxB35d0w==}
     engines: {node: '>=8'}
@@ -1979,6 +1997,15 @@ packages:
       typescript: 4.7.4
       v8-compile-cache-lib: 3.0.1
       yn: 3.1.1
+    dev: true
+
+  /tsconfig-paths/4.1.0:
+    resolution: {integrity: sha512-AHx4Euop/dXFC+Vx589alFba8QItjF+8hf8LtmuiCwHyI4rHXQtOOENaM8kvYf5fR0dRChy3wzWIZ9WbB7FWow==}
+    engines: {node: '>=6'}
+    dependencies:
+      json5: 2.2.1
+      minimist: 1.2.6
+      strip-bom: 3.0.0
     dev: true
 
   /type-fest/0.8.1:
