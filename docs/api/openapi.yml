@@ -24,7 +24,7 @@ paths:
           description: Successful response
   /purchases:
     post:
-      description: Get top restaurants based on the number of dishes within price range           
+      description: Purchase restaurant       
       responses:
         '200':
           description: Successful response
