@@ -31,5 +31,10 @@ npm run dev:watch #auto reload
     1. asdasasda
 
     
-## Route Summary
+## API Route Documentation
+
+### Summary
 > You can view the full api documentations on Postman or the openapi schema file in the docs folder.
+
+### Postman
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/1198381-e0614068-ecc2-4fa3-92d6-4397a37e1112?action=collection%2Ffork&collection-url=entityId%3D1198381-e0614068-ecc2-4fa3-92d6-4397a37e1112%26entityType%3Dcollection%26workspaceId%3D13a222dc-25e7-4b4c-8cbc-d13a44e13a15)
