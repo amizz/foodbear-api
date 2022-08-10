@@ -48,12 +48,32 @@ export async function up(knex: Knex): Promise<void> {
 
     
     /**
+     * Opening Hour
+     */
+     await knex.schema.withSchema('public').createTable('opening_hour', (table) => {
+        table.increments('id').primary().index().unique().unsigned();
+        table.integer('restaurant_id').references('id').inTable('restaurant').index().unsigned();
+        table.string('day').notNullable();
+        table.time('start').notNullable();
+        table.time('end').notNullable();
+        table.timestamp('created_at').defaultTo(knex.fn.now());
+        table.timestamp('updated_at').defaultTo(knex.fn.now());
+    });
+
+    await knex.raw(`
+        CREATE TRIGGER update_opening_hour_timestamp BEFORE UPDATE
+        ON "opening_hour" FOR EACH ROW EXECUTE PROCEDURE 
+        update_timestamp();
+    `);
+    
+    
+    /**
      * Menu
      */
      await knex.schema.withSchema('public').createTable('menu', (table) => {
         table.increments('id').primary().index().unique().unsigned();
         table.integer('restaurant_id').references('id').inTable('restaurant').index().unsigned();
-        table.string('dish_name').notNullable();
+        table.text('dish_name').notNullable();
         table.integer('price').notNullable();
         table.timestamp('created_at').defaultTo(knex.fn.now());
         table.timestamp('updated_at').defaultTo(knex.fn.now());
@@ -91,6 +111,8 @@ export async function down(knex: Knex): Promise<void> {
     await knex.schema.withSchema('public').dropTable('purchase');
     await knex.raw(`DROP TRIGGER IF EXISTS update_menu_timestamp ON "menu"`);
     await knex.schema.withSchema('public').dropTable('menu');
+    await knex.raw(`DROP TRIGGER IF EXISTS update_opening_hour_timestamp ON "opening_hour"`);
+    await knex.schema.withSchema('public').dropTable('opening_hour');
     await knex.raw(`DROP TRIGGER IF EXISTS update_restaurant_timestamp ON "restaurant"`);
     await knex.schema.withSchema('public').dropTable('restaurant');
     await knex.raw(`DROP TRIGGER IF EXISTS update_user_timestamp ON "user"`);

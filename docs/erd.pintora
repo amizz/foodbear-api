@@ -20,6 +20,15 @@ erDiagram
     TIMESTAMP created_at
     TIMESTAMP updated_at
   }
+  opening_hour {
+    INT id PK
+    INT restaurant_id FK
+    STRING day
+    TIME start
+    TIME end
+    TIMESTAMP created_at
+    TIMESTAMP updated_at
+  }
   menu {
     INT id PK
     INT restaurant_id FK
@@ -37,6 +46,7 @@ erDiagram
     TIMESTAMP created_at
     TIMESTAMP updated_at
   }
+  restaurant ||--o{ opening_hour : "fk"
   restaurant ||--o{ menu : "fk"
   restaurant ||--o{ purchase : "fk"
   user ||--o{ purchase : "fk"

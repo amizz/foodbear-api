@@ -13,6 +13,15 @@ export interface Restaurant {
     created_at: Date;
     updated_at: Date;
 }
+export interface OpeningHour {
+    id: number;
+    restaurant_id: number;
+    day: string
+    start: string;
+    endd: string;
+    created_at: Date;
+    updated_at: Date;
+}
 export interface Menu {
     id: number;
     restaurant_id: number;
