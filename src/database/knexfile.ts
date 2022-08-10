@@ -27,7 +27,7 @@ export const development: Knex.Config = {
 	},
 	seeds: {
 		timestampFilenamePrefix: true,
-		directory: 'seeds/development'
+		directory: 'seeds'
 	}
 }
 
@@ -68,7 +68,7 @@ export const staging: Knex.Config = {
 		directory: 'migrations'
 	},
 	seeds: {
-		directory: 'seeds/staging'
+		directory: 'seeds'
 	}
 }
 
@@ -90,6 +90,6 @@ export const production: Knex.Config = {
 		directory: 'migrations'
 	},
 	seeds: {
-		directory: 'seeds/production'
+		directory: 'seeds'
 	}
 }
