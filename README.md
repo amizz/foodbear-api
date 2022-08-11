@@ -23,7 +23,7 @@ npm run dev
 npm run dev:watch #auto reload
 ```
 
-> We will not be running the app on docker due to poor performance when reloading/restarting app in Windows. If you want to run it through docker, then just uncomment the app section in the docker-compose.yml. 
+> We will not be running the app on docker due to poor performance when reloading/restarting app in Windows.. 
     
 ## API Route Documentation
 
