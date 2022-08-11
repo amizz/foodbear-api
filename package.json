@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "coverage": "cross-env NODE_ENV=testing nyc --include=src uvu -r tsconfig-paths/register -r ts-node/register __tests__ --glob=\"**/*.test.ts\" --ignore fixtures",
     "test": "cross-env NODE_ENV=testing uvu -r tsconfig-paths/register -r ts-node/register __tests__ --glob=\"**/*.test.ts\"",
     "test:__tests__": "sane \"npm test\" __tests__ -o --wait=3",
     "test:src": "sane \"npm test\" src -o --wait=3",
@@ -48,10 +49,12 @@
     "ioredis": "^5.2.2",
     "joi": "^17.6.0",
     "knex": "^2.2.0",
+    "md5-file": "^5.0.0",
     "meilisearch": "^0.27.0",
     "pg": "^8.7.3"
   },
   "devDependencies": {
+    "@types/fs-extra": "^9.0.13",
     "@types/node": "^18.6.4",
     "cross-env": "^7.0.3",
     "nodemon": "^2.0.19",
