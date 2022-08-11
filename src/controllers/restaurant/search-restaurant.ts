@@ -3,7 +3,6 @@ import db from '#database/db'
 import { schemaValidator } from '#utils/validator'
 import { Req, Res } from '#interfaces/fastify'
 import { FoodBearError } from '#interfaces/common';
-import knex from 'knex';
 import { Restaurant } from '#interfaces/model';
 
 export async function searchRestaurant(req: Req, res: Res): Promise<Record<string, any>> {
@@ -14,16 +13,12 @@ export async function searchRestaurant(req: Req, res: Res): Promise<Record<strin
             .orderBy('rank', 'desc');
         return res.status(200).send(restaurants);
     } catch (error: any) {
-        if(error instanceof FoodBearError) {
-            return res.status(error.httpStatus).send({ code: error.code, message: error.message });
-        }
-        console.error(error);
         return res.status(400).send({ code: 'K9EU53LY', message: 'Failed' });
     }
 }
 
 export const searchRestaurantSchema = schemaValidator({
-    query: Joi.object().keys({
+    querystring: Joi.object().keys({
         q: Joi.string().required()
     })
 });

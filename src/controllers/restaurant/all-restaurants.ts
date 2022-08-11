@@ -11,11 +11,12 @@ import { format, utcToZonedTime } from "date-fns-tz";
 export async function allRestaurant(req: Req, res: Res): Promise<Record<string, any>> {
     try {
         let { open, limit } = req.query;
-        
-
         let restaurantsQuery = db<Restaurant>('restaurant')
-            .select('restaurant.*', db.raw(`opening_hour.json_data as opening_hour`))
-            .limit(limit);
+            .select('restaurant.*', db.raw(`opening_hour.json_data as opening_hour`));
+
+        if(limit) {
+            restaurantsQuery.limit(limit)
+        }
 
         if(open) {
             const parsedDate = parseISO(open);
@@ -51,16 +52,14 @@ export async function allRestaurant(req: Req, res: Res): Promise<Record<string, 
 
         return res.status(200).send(await restaurantsQuery);
     } catch (error: any) {
-        if(error instanceof FoodBearError) {
-            return res.status(error.httpStatus).send({ code: error.code, message: error.message });
-        }
-        console.error(error);
         return res.status(400).send({ code: 'K9EU53LY', message: 'Failed' });
     }
 }
 
+
 export const allRestaurantSchema = schemaValidator({
-    query: Joi.object().keys({
-        q: Joi.string().required()
+    querystring: Joi.object().keys({
+        open: Joi.string().optional(),
+        limit: Joi.number().optional()
     })
 });

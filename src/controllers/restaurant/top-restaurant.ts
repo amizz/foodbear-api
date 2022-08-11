@@ -25,16 +25,13 @@ export async function topRestaurant(req: Req, res: Res): Promise<Record<string, 
 
         return res.status(200).send(await restaurantsQuery);
     } catch (error: any) {
-        if(error instanceof FoodBearError) {
-            return res.status(error.httpStatus).send({ code: error.code, message: error.message });
-        }
-        console.error(error);
         return res.status(400).send({ code: 'K9EU53LY', message: 'Failed' });
     }
 }
 
 export const topRestaurantSchema = schemaValidator({
-    query: Joi.object().keys({
-        q: Joi.string().required()
+    querystring: Joi.object().keys({
+        min_price: Joi.number().optional(),
+        max_price: Joi.number().optional()
     })
 });
