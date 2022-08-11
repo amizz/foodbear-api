@@ -3,7 +3,7 @@ import { Schema } from '../interfaces/fastify'
 
 interface Payload {
   body?: any | null
-  query?: any | null
+  querystring?: any | null
   params?: any | null
   headers?: any | null
 }
