@@ -29,6 +29,7 @@ npm run dev:watch #auto reload
 
 ### Summary
 > You can view the full api documentations on Postman or the openapi schema file in the docs folder.
+
 | No | Route               | Method | Query                | Param | Body             |
 |----|---------------------|--------|----------------------|-------|------------------|
 | 1  | /                   | GET    |                      |       |                  |
