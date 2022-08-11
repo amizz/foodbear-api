@@ -1,7 +1,7 @@
 module.exports = {
 	apps: [
 		{
-			name: "kopyjam-api",
+			name: "foodbear-api",
 			script: "dist/src/server.js",
 			time: true,
 			env: {
