@@ -24,7 +24,13 @@ paths:
           description: Successful response
   /purchases:
     post:
-      description: Purchase restaurant       
+      description: Create purchase     
+      responses:
+        '200':
+          description: Successful response
+  /user/{{id}}:
+    get:
+      description: Get user by id     
       responses:
         '200':
           description: Successful response
