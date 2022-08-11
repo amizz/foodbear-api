@@ -34,11 +34,11 @@ export const development: Knex.Config = {
 export const testing: Knex.Config = {
 	client: 'postgresql',
 	connection: {
-		host: process.env.DB_HOST,
-		port: 5433,
-		database: process.env.DB_NAME,
-		user: process.env.DB_USER,
-		password: process.env.DB_PASSWORD
+		host: process.env.DB_TEST_HOST,
+		port: parseInt(process.env.DB_TEST_PORT!),
+		database: process.env.DB_TEST_NAME,
+		user: process.env.DB_TEST_USER,
+		password: process.env.DB_TEST_PASSWORD
 	},
 	pool: {
 		min: 1,
@@ -47,6 +47,10 @@ export const testing: Knex.Config = {
 	migrations: {
 		tableName: 'knex_migrations',
 		directory: 'src/database/migrations'
+	},
+	seeds: {
+		timestampFilenamePrefix: true,
+		directory: 'src/database/seeds/testing'
 	}
 }
 
