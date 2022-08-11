@@ -40,7 +40,7 @@ npm run test
 npm run coverage
 ```
 
-## API Route Documentation
+## API Route
 
 ### Summary
 > You can view the full api documentations on Postman or the openapi schema file in the docs folder.
