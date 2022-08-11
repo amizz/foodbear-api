@@ -28,8 +28,18 @@ npm run dev
 npm run dev:watch #auto reload
 ```
 
-> We will not be running the app on docker due to poor performance when reloading/restarting app in Windows.. 
-    
+> We will not be running the app on docker due to poor performance when reloading/restarting app in Windows..
+
+## Testing
+1. Running test
+```
+npm run test
+```
+2. Test code coverage
+```
+npm run coverage
+```
+
 ## API Route Documentation
 
 ### Summary
