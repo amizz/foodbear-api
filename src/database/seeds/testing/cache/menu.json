@@ -1,0 +1,183 @@
+[{
+    "id": 1,
+    "restaurant_id": 1,
+    "dish_name": "Postum cereal coffee",
+    "price": 1388,
+    "created_at": "2022-08-11T07:29:14.017Z",
+    "updated_at": "2022-08-11T07:29:14.017Z"
+}, {
+    "id": 2,
+    "restaurant_id": 1,
+    "dish_name": "GAI TOM KA: CHICKEN IN COCONUT CREAM SOUP WITH LIME JUICE GALANGA AND CHILI",
+    "price": 1064,
+    "created_at": "2022-08-11T07:29:14.017Z",
+    "updated_at": "2022-08-11T07:29:14.017Z"
+}, {
+    "id": 3,
+    "restaurant_id": 1,
+    "dish_name": "Coffee Cocktail (Port Wine",
+    "price": 1245,
+    "created_at": "2022-08-11T07:29:14.017Z",
+    "updated_at": "2022-08-11T07:29:14.017Z"
+}, {
+    "id": 4,
+    "restaurant_id": 1,
+    "dish_name": "La Romaine Braisée au Fond de Veau",
+    "price": 1059,
+    "created_at": "2022-08-11T07:29:14.017Z",
+    "updated_at": "2022-08-11T07:29:14.017Z"
+}, {
+    "id": 5,
+    "restaurant_id": 1,
+    "dish_name": "DRY LIGHT IMPORTED WINE",
+    "price": 1350,
+    "created_at": "2022-08-11T07:29:14.017Z",
+    "updated_at": "2022-08-11T07:29:14.017Z"
+}, {
+    "id": 6,
+    "restaurant_id": 1,
+    "dish_name": "Broiled Pompano",
+    "price": 1350,
+    "created_at": "2022-08-11T07:29:14.017Z",
+    "updated_at": "2022-08-11T07:29:14.017Z"
+}, {
+    "id": 7,
+    "restaurant_id": 1,
+    "dish_name": "Dean Yale School of Medicine",
+    "price": 1256,
+    "created_at": "2022-08-11T07:29:14.017Z",
+    "updated_at": "2022-08-11T07:29:14.017Z"
+}, {
+    "id": 8,
+    "restaurant_id": 1,
+    "dish_name": "Place here Stamp",
+    "price": 1238,
+    "created_at": "2022-08-11T07:29:14.017Z",
+    "updated_at": "2022-08-11T07:29:14.017Z"
+}, {
+    "id": 9,
+    "restaurant_id": 1,
+    "dish_name": "1908 Berncasteler",
+    "price": 1164,
+    "created_at": "2022-08-11T07:29:14.017Z",
+    "updated_at": "2022-08-11T07:29:14.017Z"
+}, {
+    "id": 10,
+    "restaurant_id": 1,
+    "dish_name": "Hummersuppe Filetsteak Nelson",
+    "price": 1051,
+    "created_at": "2022-08-11T07:29:14.017Z",
+    "updated_at": "2022-08-11T07:29:14.017Z"
+}, {
+    "id": 11,
+    "restaurant_id": 1,
+    "dish_name": "Hominy",
+    "price": 1019,
+    "created_at": "2022-08-11T07:29:14.017Z",
+    "updated_at": "2022-08-11T07:29:14.017Z"
+}, {
+    "id": 12,
+    "restaurant_id": 1,
+    "dish_name": "Baltimore terrapin",
+    "price": 1400,
+    "created_at": "2022-08-11T07:29:14.017Z",
+    "updated_at": "2022-08-11T07:29:14.017Z"
+}, {
+    "id": 13,
+    "restaurant_id": 1,
+    "dish_name": "Lettuce and Tomato Salads",
+    "price": 1179,
+    "created_at": "2022-08-11T07:29:14.017Z",
+    "updated_at": "2022-08-11T07:29:14.017Z"
+}, {
+    "id": 14,
+    "restaurant_id": 1,
+    "dish_name": "Sweet Virginia Pickles",
+    "price": 1015,
+    "created_at": "2022-08-11T07:29:14.017Z",
+    "updated_at": "2022-08-11T07:29:14.017Z"
+}, {
+    "id": 15,
+    "restaurant_id": 2,
+    "dish_name": "Sweetbreads",
+    "price": 1357,
+    "created_at": "2022-08-11T07:29:14.053Z",
+    "updated_at": "2022-08-11T07:29:14.053Z"
+}, {
+    "id": 16,
+    "restaurant_id": 2,
+    "dish_name": "Old pepper bourbon",
+    "price": 1015,
+    "created_at": "2022-08-11T07:29:14.053Z",
+    "updated_at": "2022-08-11T07:29:14.053Z"
+}, {
+    "id": 17,
+    "restaurant_id": 2,
+    "dish_name": "Whiskey Cocktails",
+    "price": 1025,
+    "created_at": "2022-08-11T07:29:14.053Z",
+    "updated_at": "2022-08-11T07:29:14.053Z"
+}, {
+    "id": 18,
+    "restaurant_id": 2,
+    "dish_name": "Filets de poularde",
+    "price": 1115,
+    "created_at": "2022-08-11T07:29:14.053Z",
+    "updated_at": "2022-08-11T07:29:14.053Z"
+}, {
+    "id": 19,
+    "restaurant_id": 2,
+    "dish_name": "Baked Weakfish with Boiled Potatoes",
+    "price": 1025,
+    "created_at": "2022-08-11T07:29:14.053Z",
+    "updated_at": "2022-08-11T07:29:14.053Z"
+}, {
+    "id": 20,
+    "restaurant_id": 2,
+    "dish_name": "Ox=tail Ragout with Vegetables",
+    "price": 1035,
+    "created_at": "2022-08-11T07:29:14.053Z",
+    "updated_at": "2022-08-11T07:29:14.053Z"
+}, {
+    "id": 21,
+    "restaurant_id": 2,
+    "dish_name": "1952er Gau Algesheimer Stolzenberg natur",
+    "price": 1234,
+    "created_at": "2022-08-11T07:29:14.053Z",
+    "updated_at": "2022-08-11T07:29:14.053Z"
+}, {
+    "id": 22,
+    "restaurant_id": 2,
+    "dish_name": "Caneton à l'Orange",
+    "price": 1109,
+    "created_at": "2022-08-11T07:29:14.053Z",
+    "updated_at": "2022-08-11T07:29:14.053Z"
+}, {
+    "id": 23,
+    "restaurant_id": 2,
+    "dish_name": "*COLD-Mayonnaise of Fish Printaniere",
+    "price": 1200,
+    "created_at": "2022-08-11T07:29:14.053Z",
+    "updated_at": "2022-08-11T07:29:14.053Z"
+}, {
+    "id": 24,
+    "restaurant_id": 2,
+    "dish_name": "Rum & Raisin Ice Cream",
+    "price": 1386,
+    "created_at": "2022-08-11T07:29:14.053Z",
+    "updated_at": "2022-08-11T07:29:14.053Z"
+}, {
+    "id": 25,
+    "restaurant_id": 2,
+    "dish_name": "Fried",
+    "price": 1025,
+    "created_at": "2022-08-11T07:29:14.053Z",
+    "updated_at": "2022-08-11T07:29:14.053Z"
+}, {
+    "id": 26,
+    "restaurant_id": 2,
+    "dish_name": "German potato salad",
+    "price": 1010,
+    "created_at": "2022-08-11T07:29:14.053Z",
+    "updated_at": "2022-08-11T07:29:14.053Z"
+}]
