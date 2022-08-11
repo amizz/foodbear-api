@@ -16,7 +16,12 @@ npm install
 docker compose up -d
 ```
 3. Setup your env file by copying the .env-sample to .env. Don't ever **delete** or **rename** the .env-sample. Create new file! Fill in all the relevant details.
-4. Run the app.
+4. Run migrations and seeds.
+```
+npm run knex:migrate:latest
+npm run knex:seed:run
+```
+5. Run the app.
 ```
 npm run dev
 # or
