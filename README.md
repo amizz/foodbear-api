@@ -1,5 +1,7 @@
 # FoodBear API
 
+Code coverage: 93.68%
+
 ## ERD
 <a href="docs/erd.jpg"><img src="docs/erd.jpg" width="350"></a>
 
