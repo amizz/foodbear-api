@@ -28,7 +28,7 @@ npm run dev
 npm run dev:watch #auto reload
 ```
 
-> We will not be running the app on docker due to poor performance when reloading/restarting app in Windows..
+> We will not be running the app on Docker due to poor performance when reloading/restarting app in Docker Windows. Only db and other services will be on Docker.
 
 ## Testing
 1. Running test
